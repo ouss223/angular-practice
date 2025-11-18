@@ -1,8 +1,17 @@
+.container {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
 .card-container {
   perspective: 1000px;
   width: 100%;
   max-width: 400px;
-  margin: 0 auto;
+  flex-shrink: 0;
 }
 
 .card {
@@ -14,7 +23,6 @@
   cursor: pointer;
 }
 
-/* Flip on hover */
 .card:hover {
   transform: rotateY(180deg);
 }
@@ -25,10 +33,13 @@
   height: 100%;
   backface-visibility: hidden;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.front { background: white; z-index: 2; }
+.front {
+  background: white;
+  z-index: 2;
+}
 
 .back {
   background: linear-gradient(45deg, #6a11cb, #2575fc);
@@ -38,30 +49,124 @@
   flex-direction: column;
 }
 
-/* Cover and user images */
 .cover {
   height: 140px;
   border-radius: 15px 15px 0 0;
   overflow: hidden;
 }
 
-.cover img { width: 100%; height: 100%; object-fit: cover; }
-
-.user { text-align: center; margin-top: -70px; }
-
-.img-circle {
-  width: 140px; height: 140px;
-  border-radius: 50%;
-  border: 5px solid white;
+.cover img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.content { padding: 20px; text-align: center; flex: 1; display: flex; flex-direction: column; }
+.user {
+  text-align: center;
+  margin-top: -70px;
+}
 
-.name { font-size: 24px; font-weight: bold; margin: 15px 0 5px; color: #333; }
+.img-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid white;
+  background: white;
+  object-fit: cover;
+}
 
-.profession { color: #6a11cb; font-weight: 500; margin-bottom: 15px; font-size: 16px; }
+.content {
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-.text-center { text-align: center; }
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 15px 0 5px;
+  color: #333;
+}
 
-.motto { font-style: italic; margin: 0; font-size: 16px; }
+.profession {
+  color: #6a11cb;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Back side styles */
+.back .header {
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.motto {
+  font-style: italic;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Form Styles */
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form input[type="text"] {
+  padding: 10px 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.form input[type="file"] {
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #6a11cb;
+}
+
+.file-input-info {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form {
+    width: 100%;
+    max-width: 400px;
+  }
+}

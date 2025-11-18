@@ -1,34 +1,71 @@
-<div class="card-container">
-  <div class="card auto-rotate">
-    <div class="front">
-      <div class="cover">
-        <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cover" />
+<div class="container">
+  <div class="card-container">
+    <div class="card">
+      <div class="front">
+        <div class="cover">
+          <img [src]="coverImage()" alt="Cover" />
+        </div>
+        <div class="user">
+          <img class="img-circle" [src]="profileImage()" alt="Profile" />
+        </div>
+        <div class="content">
+          <div class="main">
+            <h3 class="name">{{ name() }} {{ firstName() }}</h3>
+            <p class="profession">{{ job() }}</p>
+            <p class="text-center">
+              "{{ favoriteQuote() }}"
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="user">
-        <img class="img-circle" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Profile" />
-      </div>
-      <div class="content">
-        <div class="main">
-          <h3 class="name">Aymen Sellaouti</h3>
-          <p class="profession">Trainer</p>
-          <p class="text-center">
-            "I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"
-          </p>
+      <div class="back">
+        <div class="header">
+          <h5 class="motto">"{{ workDescription() }}"</h5>
+        </div>
+        <div class="content">
+          <div class="main">
+            <h4 class="text-center">Job Description</h4>
+            <p class="text-center">
+              {{ workKeywords() }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="back">
-      <div class="header">
-        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-      </div>
-      <div class="content">
-        <div class="main">
-          <h4 class="text-center">Job Description</h4>
-          <p class="text-center">
-            Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...
-          </p>
-        </div>
-      </div>
-    </div>
+  </div>
+
+  <div class="form">
+    <label>
+      Name:
+      <input type="text" [value]="name()" (input)="name.set($any($event.target).value)" />
+    </label>
+    <label>
+      First Name:
+      <input type="text" [value]="firstName()" (input)="firstName.set($any($event.target).value)" />
+    </label>
+    <label>
+      Job:
+      <input type="text" [value]="job()" (input)="job.set($any($event.target).value)" />
+    </label>
+    <label>
+      Cover Image:
+      <input type="file" (change)="onCoverImageSelected($event)" accept="image/*" />
+    </label>
+    <label>
+      Profile Image:
+      <input type="file" (change)="onProfileImageSelected($event)" accept="image/*" />
+    </label>
+    <label>
+      Favorite Quote:
+      <input type="text" [value]="favoriteQuote()" (input)="favoriteQuote.set($any($event.target).value)" />
+    </label>
+    <label>
+      Describe your work:
+      <input type="text" [value]="workDescription()" (input)="workDescription.set($any($event.target).value)" />
+    </label>
+    <label>
+      Work Keywords:
+      <input type="text" [value]="workKeywords()" (input)="workKeywords.set($any($event.target).value)" />
+    </label>
   </div>
 </div>
