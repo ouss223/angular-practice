@@ -8,6 +8,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './component-test.component.css'
 })
 export class ComponentTestComponent {
-  color = signal('red');
+  color = signal<string>('red');
 
 }
