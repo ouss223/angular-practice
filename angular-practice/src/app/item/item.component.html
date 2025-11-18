@@ -1,0 +1,13 @@
+<div class="item" (click)="selectItem()">
+  <div class="item-header">
+    <img [src]="cv.path" [alt]="cv.name" class="item-image" *ngIf="cv.path">
+    <div class="item-info">
+      <h3>{{ cv.firstname }} {{ cv.name }}</h3>
+      <p class="job">{{ cv.job }}</p>
+    </div>
+  </div>
+  <div class="item-details">
+    <span class="age">Age: {{ cv.age }}</span>
+    <span class="cin">CIN: {{ cv.cin }}</span>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="liste">
+  <app-item 
+    *ngFor="let person of persons" 
+    [cv]="person"
+    (selected)="selectPerson(person)">
+  </app-item>
+</div>
