@@ -1,4 +1,10 @@
 <div>
-  <input type="text" [(ngModel)]="color">
-  <p [style.color]="color()">The color is: {{ color() }}</p>
+  <div [style.backgroundColor]="color()">
+    <input type="text" [(ngModel)]="color" />
+  </div>
+  <div>
+    <p [style.color]="color()">The color is: {{ color() }}</p>
+  </div>
+
+  <button (click)="color.set('red')">return to default color</button>
 </div>
