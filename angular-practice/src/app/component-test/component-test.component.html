@@ -1,1 +1,4 @@
-<p>component-test works!</p>
+<div>
+  <input type="text" [(ngModel)]="color">
+  <p [style.color]="color()">The color is: {{ color() }}</p>
+</div>
