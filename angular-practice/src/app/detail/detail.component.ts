@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { Person } from '../models/person.model';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [NgIf], 
+  imports: [], 
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })

@@ -26,7 +26,8 @@ export class HeaderComponent {
         { path: '/cv/detail', label: 'Detail' }
       ]
     },
-    { path: '/ttc', label: 'TTC' }
+    { path: '/ttc', label: 'TTC' },
+    { path: '/login', label: 'Login' }
   ];
 
   showCvDropdown = false;
