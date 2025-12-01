@@ -1,31 +1,37 @@
 @if (selectedPerson) {
-<div class="detail">
-  <div class="detail-header">
-    @if (selectedPerson.path) {
-    <img [src]="selectedPerson.path" [alt]="selectedPerson.name" class="detail-image">
-    }
-    <div class="detail-info">
-      <h2>{{ selectedPerson.firstname }} {{ selectedPerson.name }}</h2>
-      <p class="job-title">{{ selectedPerson.job }}</p>
+<div class="card-container">
+  <div class="card">
+    <!-- Front of the card -->
+    <div class="card-face card-front">
+      @if (selectedPerson.path) {
+      <img [src]="selectedPerson.path" [alt]="selectedPerson.name" class="card-image">
+      }
+      <div class="card-name">
+        <h2>{{ selectedPerson.firstname }} {{ selectedPerson.name }}</h2>
+      </div>
     </div>
-  </div>
 
-  <div class="detail-content">
-    <div class="detail-row">
-      <span class="label">ID:</span>
-      <span class="value">{{ selectedPerson.id }}</span>
-    </div>
-    <div class="detail-row">
-      <span class="label">Age:</span>
-      <span class="value">{{ selectedPerson.age }} years</span>
-    </div>
-    <div class="detail-row">
-      <span class="label">CIN:</span>
-      <span class="value">{{ selectedPerson.cin }}</span>
-    </div>
-    <div class="detail-row">
-      <span class="label">Full Name:</span>
-      <span class="value">{{ selectedPerson.firstname }} {{ selectedPerson.name }}</span>
+    <!-- Back of the card -->
+    <div class="card-face card-back">
+      <div class="card-details">
+        <h3>Details</h3>
+        <div class="detail-row">
+          <span class="label">Job:</span>
+          <span class="value">{{ selectedPerson.job }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">ID:</span>
+          <span class="value">{{ selectedPerson.id }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Age:</span>
+          <span class="value">{{ selectedPerson.age }} years</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">CIN:</span>
+          <span class="value">{{ selectedPerson.cin }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
