@@ -9,7 +9,49 @@
       class="slideshow-image"
     />
   </div>
-  <div class="info">
-    <p>Interval: {{ intervalTime }}ms</p>
+  
+  <div class="">
+    <div class="control-group">
+      <label for="intervalTime">Intervalle (ms):</label>
+      <input 
+        id="intervalTime" 
+        type="number" 
+        [(ngModel)]="intervalTime" 
+        (change)="updateInterval()"
+        min="100"
+      />
+    </div>
+
+    <div class="control-group">
+      <label for="imageWidth">Largeur (px):</label>
+      <input 
+        id="imageWidth" 
+        type="number" 
+        [(ngModel)]="imageWidth" 
+        min="100"
+      />
+    </div>
+
+    <div class="control-group">
+      <label for="imageHeight">Hauteur (px):</label>
+      <input 
+        id="imageHeight" 
+        type="number" 
+        [(ngModel)]="imageHeight" 
+        min="100"
+      />
+    </div>
+
+    <div class="control-group full-width">
+      <label for="imageList">Liste d'images (séparées par des virgules):</label>
+      <input 
+        id="imageList" 
+        type="text" 
+        [(ngModel)]="imageListInput" 
+        (change)="updateImageList()"
+        placeholder="images/1.jpg,images/2.jpg,..."
+      />
+    </div>
   </div>
+
 </div>
