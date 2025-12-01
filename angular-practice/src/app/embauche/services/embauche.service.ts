@@ -14,7 +14,7 @@ export class EmbaucheService {
     }
 
     embaucher(person: Person): void {
-        const index = this.embauchees.indexOf(person);
+        const index = this.embauchees.findIndex(p => p.id === person.id);
         if (index < 0) {
             this.embauchees.push(person);
         } else {
