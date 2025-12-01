@@ -1,0 +1,11 @@
+<div class="embauche-container" *ngIf="embauchees.length > 0">
+    <h3>Liste des personnes pré sélectionnées :</h3>
+    <div class="embauche-list">
+        <div class="embauche-item" *ngFor="let person of embauchees">
+            <img [src]="person.path" [alt]="person.name" class="embauche-avatar">
+            <div class="embauche-info">
+                <span class="embauche-name">{{ person.firstname }} {{ person.name }}</span>
+            </div>
+        </div>
+    </div>
+</div>

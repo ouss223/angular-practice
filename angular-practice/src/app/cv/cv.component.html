@@ -1,8 +1,9 @@
 <div class="cv-container">
   <div class="left-side">
-    <app-liste (personSelected)="onPersonSelected($event)"></app-liste>
+    <app-liste [persons]="persons" (personSelected)="onPersonSelected($event)"></app-liste>
   </div>
   <div class="right-side">
     <app-detail [selectedPerson]="selectedPerson"></app-detail>
   </div>
 </div>
+<app-embauche></app-embauche>
