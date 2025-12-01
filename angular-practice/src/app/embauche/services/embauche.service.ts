@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Person } from '../../models/person.model';
 
 @Injectable({
@@ -6,6 +7,8 @@ import { Person } from '../../models/person.model';
 })
 export class EmbaucheService {
     private embauchees: Person[] = [];
+
+    private toastr = inject(ToastrService);
 
     constructor() { }
 
@@ -17,8 +20,9 @@ export class EmbaucheService {
         const index = this.embauchees.findIndex(p => p.id === person.id);
         if (index < 0) {
             this.embauchees.push(person);
+            this.toastr.success(`${person.name} a été embauché avec succès`);
         } else {
-            alert(`${person.name} est déjà pré sélectionné`);
+            this.toastr.warning(`${person.name} est déjà pré sélectionné`);
         }
     }
 }
