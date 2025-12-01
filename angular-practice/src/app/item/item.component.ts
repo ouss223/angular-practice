@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { Person } from '../models/person.model';
 
 @Component({
   selector: 'app-item',
@@ -9,10 +10,10 @@ import { NgIf } from '@angular/common';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent {
-  @Input() cv: any;
-  @Output() selected = new EventEmitter<void>();
+  @Input() cv!: Person;
+  @Output() selected = new EventEmitter<Person>();
 
   selectItem() {
-    this.selected.emit();
+    this.selected.emit(this.cv);
   }
 }

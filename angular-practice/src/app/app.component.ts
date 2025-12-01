@@ -5,8 +5,8 @@ import { CvComponent } from './cv/cv.component';
 
 @Component({
   selector: 'app-root',
-  //imports: [RouterOutlet, ],
-  imports: [CvComponent], 
+  imports: [RouterOutlet], 
+  //imports: [CvComponent], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

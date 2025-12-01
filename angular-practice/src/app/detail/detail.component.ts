@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { Person } from '../models/person.model';
 
 @Component({
   selector: 'app-detail',
@@ -9,5 +10,5 @@ import { NgIf } from '@angular/common';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent {
-  @Input() selectedPerson: any;
+  @Input() selectedPerson!: Person;
 }

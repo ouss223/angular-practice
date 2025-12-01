@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-carte-visite',
-  standalone: true,
   imports: [FormsModule],
   templateUrl: './carte-visite.component.html',
   styleUrls: ['./carte-visite.component.css']

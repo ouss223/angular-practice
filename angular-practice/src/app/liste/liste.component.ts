@@ -1,48 +1,24 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { NgFor } from '@angular/common';
 import { ItemComponent } from '../item/item.component';
+import { Person } from '../models/person.model';
 
 @Component({
   selector: 'app-liste',
   standalone: true,
-  imports: [NgFor, ItemComponent],
+  imports: [ItemComponent],
   templateUrl: './liste.component.html',
   styleUrls: ['./liste.component.css']
 })
 export class ListeComponent {
-  @Output() personSelected = new EventEmitter<any>();
+  @Output() personSelected = new EventEmitter<Person>();
   
-  persons = [
-    {
-      id: 1,
-      name: 'john',
-      firstname: 'rafi',
-      age: 35,
-      cin: '12345678',
-      job: 'Trainer',
-      path: 'images/rafi.png'
-    },
-    {
-      id: 2,
-      name: 'Doe',
-      firstname: 'John',
-      age: 28,
-      cin: '87654321',
-      job: 'Developer',
-      path: 'images/john.png'
-    },
-    {
-      id: 3,
-      name: 'Smith',
-      firstname: 'Jane',
-      age: 32,
-      cin: '11223344',
-      job: 'Designer',
-      path: 'images/jane.png'
-    }
+  persons: Person[] = [
+    new Person(1, 'john', 'rafi', 35, '12345678', 'Trainer', 'images/rafi.png'),
+    new Person(2, 'Doe', 'John', 28, '87654321', 'Developer', 'images/john.png'),
+    new Person(3, 'Smith', 'Jane', 32, '11223344', 'Designer', 'images/jane.png')
   ];
 
-  selectPerson(person: any) {
+  selectPerson(person: Person) {
     this.personSelected.emit(person);
   }
 }

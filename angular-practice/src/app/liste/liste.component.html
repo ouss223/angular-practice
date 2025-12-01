@@ -1,7 +1,8 @@
 <div class="liste">
-  <app-item 
-    *ngFor="let person of persons" 
-    [cv]="person"
-    (selected)="selectPerson(person)">
-  </app-item>
+  @for (person of persons; track person.id) {
+    <app-item 
+      [cv]="person"
+      (selected)="selectPerson(person)">
+    </app-item>
+  }
 </div>

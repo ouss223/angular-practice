@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ListeComponent } from '../liste/liste.component';
 import { DetailComponent } from '../detail/detail.component';
+import { Person } from '../models/person.model';
 
 @Component({
   selector: 'app-cv',
@@ -10,9 +11,9 @@ import { DetailComponent } from '../detail/detail.component';
   styleUrls: ['./cv.component.css']
 })
 export class CvComponent {
-  selectedPerson: any;
+  selectedPerson!: Person;
 
-  onPersonSelected(person: any) {
+  onPersonSelected(person: Person) {
     this.selectedPerson = person;
   }
 }
