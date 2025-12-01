@@ -1,8 +1,6 @@
 <div class="auth-container">
-  <h2>Authentification</h2>
-
   <form [formGroup]="authForm" (ngSubmit)="submitAuth()">
-    <!-- Email field -->
+    <!-- Email  -->
     <div class="form-group">
       <label for="email">Email</label>
       <input
@@ -17,7 +15,7 @@
       }
     </div>
 
-    <!-- Password field -->
+    <!-- Password  -->
     <div class="form-group">
       <label for="password">Mot de passe</label>
       <input
@@ -32,12 +30,11 @@
       }
     </div>
 
-    <!-- Form-level error message -->
+    <!--  error message -->
     @if (formError) {
       <div class="form-error">{{ formError }}</div>
     }
 
-    <!-- Submit button -->
     <button type="submit" [disabled]="authForm.invalid">Envoyer</button>
   </form>
 </div>
