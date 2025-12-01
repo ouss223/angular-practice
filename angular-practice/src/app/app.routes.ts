@@ -3,6 +3,7 @@ import { ComponentTestComponent } from './component-test/component-test.componen
 import { CarteVisiteComponent } from './carte-visite/carte-visite.component';
 import { TTCComponent } from './ttc/ttc.component';
 import { CvComponent } from './cv/cv.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 export const routes: Routes = [
@@ -10,5 +11,6 @@ export const routes: Routes = [
   { path: 'test-component', component: ComponentTestComponent },
   { path: 'cv', component: CvComponent },
   { path: 'ttc', component: TTCComponent },
+  { path: 'login', component: AuthComponent },
   { path: '', redirectTo: '/carte-visite', pathMatch: 'full' },
 ];
