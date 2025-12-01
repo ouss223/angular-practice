@@ -1,12 +1,15 @@
-<div class="detail" *ngIf="selectedPerson; else noSelection">
+@if (selectedPerson) {
+<div class="detail">
   <div class="detail-header">
-    <img [src]="selectedPerson.path" [alt]="selectedPerson.name" class="detail-image" *ngIf="selectedPerson.path">
+    @if (selectedPerson.path) {
+    <img [src]="selectedPerson.path" [alt]="selectedPerson.name" class="detail-image">
+    }
     <div class="detail-info">
       <h2>{{ selectedPerson.firstname }} {{ selectedPerson.name }}</h2>
       <p class="job-title">{{ selectedPerson.job }}</p>
     </div>
   </div>
-  
+
   <div class="detail-content">
     <div class="detail-row">
       <span class="label">ID:</span>
@@ -26,10 +29,9 @@
     </div>
   </div>
 </div>
-
-<ng-template #noSelection>
-  <div class="no-selection">
-    <h3>Select a CV</h3>
-    <p>Click on a person from the list to view their details</p>
-  </div>
-</ng-template>
+} @else {
+<div class="no-selection">
+  <h3>Select a CV</h3>
+  <p>Click on a person from the list to view their details</p>
+</div>
+}

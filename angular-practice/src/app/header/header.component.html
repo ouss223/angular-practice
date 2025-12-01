@@ -1,0 +1,61 @@
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <span class="logo-text">Angular</span>
+            <span class="logo-accent">Practice</span>
+        </div>
+
+        <nav class="nav">
+            <a routerLink="/carte-visite" routerLinkActive="active" class="nav-link">
+                <span class="nav-icon">📇</span>
+                <span>Carte Visite</span>
+            </a>
+
+            <a routerLink="/test-component" routerLinkActive="active" class="nav-link">
+                <span class="nav-icon">🧪</span>
+                <span>Test Component</span>
+            </a>
+
+            <div class="nav-dropdown" (mouseenter)="showCvDropdown = true" (mouseleave)="showCvDropdown = false">
+                <a routerLink="/cv" routerLinkActive="active" class="nav-link dropdown-trigger">
+                    <span class="nav-icon">📄</span>
+                    <span>CV</span>
+                    <span class="dropdown-arrow">▾</span>
+                </a>
+
+                <div class="dropdown-menu" [class.show]="showCvDropdown">
+                    <div class="dropdown-header">CV Component</div>
+                    <a routerLink="/cv" class="dropdown-item">
+                        <span class="dropdown-icon">📋</span>
+                        <div>
+                            <div style="font-weight: 600;">CV (Parent)</div>
+                            <div style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Contains Liste & Detail
+                                children</div>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-subheader">Child Components</div>
+                    <div class="dropdown-item child info-only">
+                        <span class="dropdown-icon">📝</span>
+                        <div>
+                            <div>Liste Component</div>
+                            <div style="font-size: 0.8rem; color: #999;">Rendered inside CV</div>
+                        </div>
+                    </div>
+                    <div class="dropdown-item child info-only">
+                        <span class="dropdown-icon">🔍</span>
+                        <div>
+                            <div>Detail Component</div>
+                            <div style="font-size: 0.8rem; color: #999;">Rendered inside CV</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a routerLink="/ttc" routerLinkActive="active" class="nav-link">
+                <span class="nav-icon">💰</span>
+                <span>TTC</span>
+            </a>
+        </nav>
+    </div>
+</header>
