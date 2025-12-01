@@ -1,0 +1,15 @@
+<div class="slideshow-container">
+  <h2>Affichage du suite d'images</h2>
+  <div class="">
+    <img 
+      [src]="currentImage$ | async" 
+      [width]="imageWidth" 
+      [height]="imageHeight"
+      alt="Slideshow image"
+      class="slideshow-image"
+    />
+  </div>
+  <div class="info">
+    <p>Interval: {{ intervalTime }}ms</p>
+  </div>
+</div>
